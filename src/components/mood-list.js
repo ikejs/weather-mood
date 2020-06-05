@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Mood from './mood/mood'
+import Moment from 'react-moment';
 
 class MoodList extends Component {
 
@@ -12,7 +12,9 @@ class MoodList extends Component {
             const { date, weather, mood } = day;
             return( 
               <div>
-                <h3>{JSON.stringify(date)}</h3>
+                <h3>
+                  <Moment format="MMMM Do, YYYY">{date}</Moment>
+                </h3>
                 <p>{JSON.stringify(weather.main)}</p>
                 <p><b>Mood: </b>{mood}</p>
               </div>
