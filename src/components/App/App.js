@@ -6,6 +6,8 @@ import './App.css';
 
 import { loadState, saveState } from '../../helpers'
 
+import MoodNew from '../mood-new/mood-new'
+
 const persistedState = loadState();
 const store = createStore(reducers, persistedState);
 store.subscribe(() => {
@@ -18,6 +20,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <h1>Weather Mood</h1>
+          <MoodNew />
         </div>
       </Provider>
     );
