@@ -7,6 +7,7 @@ import './App.css';
 
 import { loadState, saveState } from '../../helpers'
 
+import Nav from '../nav'
 import MoodNew from '../mood-new/mood-new'
 import MoodList from '../mood-list'
 
@@ -20,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <h1>Weather Mood</h1>
+        <Nav />
+        <div className="col-md-12">
           <MoodNew />
           <MoodList />
         </div>
