@@ -22,3 +22,8 @@ export const saveState = (state) => {
     console.log(`Error saving data:${err}`)
   }
 }
+
+// Capitalize first character
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}

@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Nav />
-        <div className="col-md-12">
+        <div className="col-md-5 offset-md-3">
           <MoodNew />
           <MoodList />
         </div>
