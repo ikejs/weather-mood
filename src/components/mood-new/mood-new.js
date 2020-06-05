@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { newMood } from '../../actions'
+import { newMood, updateMood } from '../../actions'
 
 class MoodNew extends Component {
   
@@ -46,10 +46,17 @@ class MoodNew extends Component {
             <input 
               type="text"
               className="form-control" 
-              type="text"
               placeholder="What is your mood today?"
               value={this.state.mood}
-              onChange={(e) => this.setState({ mood: e.target.value })}
+              onChange={(e) => {
+                this.setState({ mood: e.target.value })
+                if(!this.props.moods.length) {
+                  this.props.updateMood({ 
+                    mood: e.target.value
+                  })
+                }
+              }
+              }
             />
             <div class="input-group-append">
               <button type="submit" class="btn btn-outline-success">Save</button>
@@ -66,7 +73,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = () => {
-  return { newMood }
+  return { 
+    newMood,
+    updateMood
+   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps())(MoodNew)

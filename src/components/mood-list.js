@@ -2,10 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment';
 import { capitalize, toFahrenheit } from '../helpers'
+import NoMoodsYet from './no-moods-yet'
 
 class MoodList extends Component {
 
   render() {
+    if (this.props.moods.length < 1) {
+        return (
+          <NoMoodsYet />
+        )    
+    }
     return (
       <div>
         {
