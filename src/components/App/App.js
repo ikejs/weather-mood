@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from '../../reducers'
+import './bootstrap.min.css';
 import './App.css';
 
 import { loadState, saveState } from '../../helpers'
