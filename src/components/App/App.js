@@ -7,6 +7,7 @@ import './App.css';
 import { loadState, saveState } from '../../helpers'
 
 import MoodNew from '../mood-new/mood-new'
+import MoodList from '../mood-list'
 
 const persistedState = loadState();
 const store = createStore(reducers, persistedState);
@@ -21,6 +22,7 @@ class App extends Component {
         <div className="App">
           <h1>Weather Mood</h1>
           <MoodNew />
+          <MoodList />
         </div>
       </Provider>
     );
