@@ -29,27 +29,30 @@ class MoodNew extends Component {
 
   render() {
     return (
-      <form 
-        onSubmit={(e) => this.handleSubmit(e)}
-      >
-        <input
-          type="number"
-          placeholder="ZIP"
-          value={this.state.zip}
-          onChange={(e) => this.setState({ zip: e.target.value })}
-        />
-        <input 
-          type="text"
-          placeholder="What is your mood today?"
-          value={this.state.mood}
-          onChange={(e) => this.setState({ mood: e.target.value })}
-        />
-        <button 
-          type="submit"
-        >
-          Save
-        </button>
-      </form>
+      <div className="col-md-12 pl-0 pr-0 mt-4 mb-4">
+        <form className="w-100" onSubmit={(e) => this.handleSubmit(e)}>
+          <div class="input-group">
+            <input 
+              type="number" 
+              className="form-control col-sm-2"
+              placeholder="ZIP"
+              value={this.state.zip}
+              onChange={(e) => this.setState({ zip: e.target.value })}
+            />
+            <input 
+              type="text"
+              className="form-control" 
+              type="text"
+              placeholder="What is your mood today?"
+              value={this.state.mood}
+              onChange={(e) => this.setState({ mood: e.target.value })}
+            />
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-outline-success">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
     )
   }
 }

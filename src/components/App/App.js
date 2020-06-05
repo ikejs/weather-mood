@@ -24,6 +24,7 @@ class App extends Component {
         <Nav />
         <div className="col-md-5 offset-md-3">
           <MoodNew />
+          <hr />
           <MoodList />
         </div>
       </Provider>
