@@ -18,12 +18,16 @@ class MoodNew extends Component {
     fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zip}&appid=${process.env.REACT_APP_OWM}`)
       .then(response => response.json())
       .then(weather => {
-        this.props.newMood({ 
-          date: new Date(),
-          weather,
-          mood: this.state.mood
-        })
-        this.setState({ mood: '' })
+        if (weather.name) {
+          this.props.newMood({ 
+            date: new Date(),
+            weather,
+            mood: this.state.mood
+          })
+          this.setState({ mood: '' })
+        } else {
+          alert('Invalid ZIP')
+        }
       });
   }
 
