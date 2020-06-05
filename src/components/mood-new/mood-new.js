@@ -7,16 +7,15 @@ class MoodNew extends Component {
   constructor(props) {
     super(props) 
     this.state = {
-      zip: '',
+      zip: '94108',
       mood: ''
     }
   }
 
   handleSubmit(e) {
-    alert(process.env.OWM_API_KEY);
     e.preventDefault()
     if (this.state.mood === '') { return }
-    fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zip}&appid=${process.env.OWM_API_KEY}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zip}&appid=${process.env.REACT_APP_OWM}`)
       .then(response => response.json())
       .then(weather => {
         this.props.newMood({ 
@@ -36,7 +35,7 @@ class MoodNew extends Component {
         <input
           type="number"
           placeholder="ZIP"
-          value="94108"
+          value={this.state.zip}
           onChange={(e) => this.setState({ zip: e.target.value })}
         />
         <input 

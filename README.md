@@ -5,7 +5,7 @@ A React app using the [OpenWeatherMap API](https://openweathermap.org/api) that 
 
 ## Installation
 - Get an **[OpenWeatherMap API Key](https://openweathermap.org/api)**
-- Create .env at root, add `OWM_API_KEY=yourkeyhere`
+- Create .env at root, add `REACT_APP_OWM=yourkeyhere`
 ```bash
 npm install
 ```
