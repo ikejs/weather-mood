@@ -27,3 +27,8 @@ export const saveState = (state) => {
 export const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// Convert kelvin to fahrenheit
+export const toFahrenheit = (kelvin) => {
+  return ((((kelvin - 273.15) * 9) / 5) + 32).toFixed();
+}
